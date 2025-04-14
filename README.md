@@ -59,4 +59,4 @@ Blockchain valid? true
 ### Files
 
 - `main.rs` – main blockchain logic and CLI.
-- `blockchain.json` – saved blockchain state.
+- `blockchain.json` – saved blockchain state. (Generated after first transaction)
