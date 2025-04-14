@@ -1,48 +1,62 @@
-## Unit 1 -English Version- 🚀
+## RustyChain 
 
-This will be your first project on this Learning Path you have admin permissions on this repo so you can change it as you like. 
+This project is a simple **educational blockchain** implementation in Rust, designed for demonstration purposes. It allows you to create and validate blocks with transactions, simulate Proof-of-Work mining, and persist the blockchain state to a JSON file.
 
-### What's this project about?
+---
 
-With all the knowledge you have now, you will create a blockchain for demonstrative purposes, it doesn't have to be perfect. 
+### Features
+- **Transactions** with `from`, `to`, and `amount`
+- **Proof-of-Work** with adjustable difficulty
+- **Blockchain validation**
+- **Persistent storage** to `blockchain.json` (for simplicity)
+- **Interactive CLI** for adding transactions
 
-#### Requirements 
+---
 
-- This blockchain should have a method to validate the transactions/blocks.
-- A Proof-of-Work Method (Ideally)
-- You can use whatever programming language you want. 
-- Update this README with a brief explanation of the project. 
-- Comment your code so your teammates at Zircon can understand it. 
-- Use external libraries if you want. 
+### How It Works
 
-### List of resources
+Each time the program runs:
 
-#### General
+1. It loads the blockchain from `blockchain.json` if it exists.
+2. Prompts the user to enter transaction details.
+3. Creates a new block containing the transaction.
+4. Mines the block using a basic Proof-of-Work mechanism (hash must start with `0000`).
+5. Adds the block to the chain and saves it back to disk.
 
-- [Creating a blockchain in 60 lines of Javascript](https://dev.to/freakcdev297/creating-a-blockchain-in-60-lines-of-javascript-5fka)
-- [¿Cómo crear una cadena de bloques con Python?](https://geekflare.com/es/create-a-blockchain-with-python/#:~:text=Creando%20la%20clase%20Block,que%20Blockchain%20cree%20transacciones%20seguras.)
+---
 
-## Unidad 1 -Versión en español - 🚀
+### Prerequisites
+- Install Rust and Cargo
 
-Este será tu primer proyecto en esta ruta de aprendizaje. Tienes permisos de administrador en este repositorio para que puedas cambiarlo como desees.
+### Getting Started
 
-### ¿De qué se trata este proyecto?
+#### 1. Clone the repository
 
-Con todo el conocimiento que tienes ahora, crearás una cadena de bloques de demostración, no tiene que ser perfecta.
+#### 2. Build the project and install dependencies
+```bash
+cargo build
+```
+#### 3. Run the project
+```bash
+cargo run
+```
 
-#### Requisitos
+---
 
-- Esta blockchain deberá tener un metodo para validar las transacciones/bloques.
-- Un metodo de prueba de trabajo. Proof-Of-Work (Idealmente)
-- Puedes usar el lenguaje de programación que quieras.
-- Actualiza este README con una breve explicación del proyecto.
-- Comenta tu código para que tus compañeros de Zircon puedan entenderlo.
-- Utiliza bibliotecas externas si quieres.
+### Example Interaction
 
-### Lista de recursos
+```txt
+--- New Transaction ---
+From: Abdulelah
+To: Sarah
+Amount: 10
+✅ Block added and mined.
+Blockchain valid? true
+```
 
-#### General
+---
 
-- [Creating a blockchain in 60 lines of Javascript](https://dev.to/freakcdev297/creating-a-blockchain-in-60-lines-of-javascript-5fka)
-- [¿Cómo crear una cadena de bloques con Python?](https://geekflare.com/es/create-a-blockchain-with-python/#:~:text=Creando%20la%20clase%20Block,que%20Blockchain%20cree%20transacciones%20seguras.)
+### Files
 
+- `main.rs` – main blockchain logic and CLI.
+- `blockchain.json` – saved blockchain state.
